@@ -1,6 +1,5 @@
 import 'package:bmi/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class homePage extends StatefulWidget {
   const homePage({super.key});
@@ -59,7 +58,7 @@ class _homePageState extends State<homePage> {
           elevation: 0,
           toolbarHeight: 90,
           backgroundColor: Colors.teal[800],
-          title: Text(
+          title: const Text(
             'BMI Calculator',
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
           ),
@@ -71,38 +70,38 @@ class _homePageState extends State<homePage> {
             children: [
               basicText(
                   'The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy.'),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Row(
                 children: [
                   basicText('Height:'),
-                  SizedBox(width: 80),
+                  const SizedBox(width: 80),
                   field(heightController)
                 ],
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Row(
                 children: [
                   basicText('Weight:'),
-                  SizedBox(width: 80),
+                  const SizedBox(width: 80),
                   field(weightController)
                 ],
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               OutlinedButton(
                   onPressed: calculate,
-                  child: Text(
+                  child: const Text(
                     'Calculate',
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   )),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               basicText('Your BMI is ' + result),
               Text(status,
                   style: TextStyle(
                       color: statusColor,
                       fontSize: 20,
                       fontWeight: FontWeight.bold)),
-              SizedBox(height: 20),
-              Text(solution, style: TextStyle(fontSize: 18))
+              const SizedBox(height: 20),
+              Text(solution, style: const TextStyle(fontSize: 18))
             ],
           ),
         ),
