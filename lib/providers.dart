@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final heightControllerProvider = StateProvider((_) => TextEditingController());
-final weightControllerProvider = StateProvider((_) => TextEditingController());
-final resultProvider = StateProvider<String>((_) => '');
-final statusProvider = StateProvider<String>((_) => '');
-final statusColorProvider = StateProvider<Color>((_) => Colors.transparent);
-final solutionProvider = StateProvider<String>((_) => '');
+final heightControllerProvider =
+    StateProvider((ref) => TextEditingController());
+final weightControllerProvider =
+    StateProvider((ref) => TextEditingController());
+final resultProvider = StateProvider<String>((ref) => '');
+final statusProvider = StateProvider<String>((ref) => '');
+final statusColorProvider = StateProvider<Color>((ref) => Colors.transparent);
+final solutionProvider = StateProvider<String>((ref) => '');
 
 void calculate(BuildContext context, WidgetRef ref) {
   final heightController = ref.read(heightControllerProvider);
