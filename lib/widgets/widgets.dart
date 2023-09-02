@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 Widget field(
   TextEditingController textcontroller,
 ) {
-  return Container(
+  return SizedBox(
     width: 100,
     child: TextField(
         controller: textcontroller,
@@ -21,6 +21,6 @@ Widget field(
 Widget basicText(String text) {
   return Text(
     text,
-    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
   );
 }

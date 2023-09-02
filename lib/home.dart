@@ -59,14 +59,14 @@ class _homePageState extends ConsumerState<homePage> {
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   )),
               const SizedBox(height: 50),
-              basicText('Your BMI is ' + ref.watch(resultProvider)),
-              Text('${ref.watch(statusProvider)}',
+              basicText('Your BMI is ${ref.watch(resultProvider)}'),
+              Text(ref.watch(statusProvider),
                   style: TextStyle(
                       color: ref.watch(statusColorProvider),
                       fontSize: 20,
                       fontWeight: FontWeight.bold)),
               const SizedBox(height: 20),
-              Text('${ref.watch(solutionProvider)}',
+              Text(ref.watch(solutionProvider),
                   style: const TextStyle(fontSize: 18))
             ],
           ),
