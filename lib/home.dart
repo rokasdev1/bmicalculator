@@ -3,14 +3,14 @@ import 'package:bmi/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class homePage extends ConsumerStatefulWidget {
-  const homePage({super.key});
+class HomePage extends ConsumerStatefulWidget {
+  const HomePage({super.key});
 
   @override
-  ConsumerState<homePage> createState() => _homePageState();
+  ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _homePageState extends ConsumerState<homePage> {
+class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,35 +31,36 @@ class _homePageState extends ConsumerState<homePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              basicText(
-                  'The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy.'),
+              const BasicText(
+                  text:
+                      'The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy.'),
               const SizedBox(height: 50),
               Row(
                 children: [
-                  basicText('Height:'),
+                  const BasicText(text: 'Height:'),
                   const SizedBox(width: 80),
-                  field(ref.read(heightControllerProvider))
+                  Field(textcontroller: ref.read(heightControllerProvider))
                 ],
               ),
               const SizedBox(height: 50),
               Row(
                 children: [
-                  basicText('Weight:'),
+                  const BasicText(text: 'Weight:'),
                   const SizedBox(width: 80),
-                  field(ref.read(weightControllerProvider))
+                  Field(textcontroller: ref.read(weightControllerProvider))
                 ],
               ),
               const SizedBox(height: 40),
               OutlinedButton(
                   onPressed: () {
-                    calculate(context, ref);
+                    CalculationNotifer().calculate(ref);
                   },
                   child: const Text(
                     'Calculate',
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   )),
               const SizedBox(height: 50),
-              basicText('Your BMI is ${ref.watch(resultProvider)}'),
+              BasicText(text: 'Your BMI is ${ref.watch(resultProvider)}'),
               Text(ref.watch(statusProvider),
                   style: TextStyle(
                       color: ref.watch(statusColorProvider),
